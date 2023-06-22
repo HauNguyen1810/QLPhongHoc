@@ -1,0 +1,10 @@
+package Entitys;
+
+public class RoomDetails {
+	private int Roomid;
+	private String date;
+	private int ClassNameId;
+	private int SubjectNameId;
+	
+	
+}

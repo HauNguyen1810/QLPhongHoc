@@ -1,0 +1,8 @@
+package Entitys;
+
+public class SubjectNames {
+	private int id;
+	private String SubjectName;
+	
+	
+}

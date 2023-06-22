@@ -1,0 +1,766 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package assment;
+
+import java.awt.Color;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+/**
+ *
+ * @author User
+ */
+public class FROMNV extends javax.swing.JFrame {
+
+    DefaultTableModel model;
+
+    public FROMNV() {
+        initComponents();
+        loadData();
+        fillTable();
+        model = (DefaultTableModel) tblQL.getModel();
+        txtsize.setText((ListQl.size()) + "");
+    }
+    static int index = -2;
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnFind = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblQL = new javax.swing.JTable();
+        btnshowcuoi = new javax.swing.JButton();
+        btnGiam = new javax.swing.JButton();
+        btncuoi = new javax.swing.JButton();
+        btnTang = new javax.swing.JButton();
+        txtsizedong = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtsize = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        rdbNam = new javax.swing.JRadioButton();
+        rdbNu = new javax.swing.JRadioButton();
+        btnXoa = new javax.swing.JButton();
+        lblMa = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtMa = new javax.swing.JTextField();
+        lblName = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        lblTuoi = new javax.swing.JLabel();
+        txtTuoi = new javax.swing.JTextField();
+        lblKN = new javax.swing.JLabel();
+        btnNew = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
+        TXTEmail = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        txtLuong = new javax.swing.JTextField();
+        btnExit = new javax.swing.JButton();
+
+        jLabel4.setText("jLabel4");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 102));
+
+        btnFind.setText("Find");
+        btnFind.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFindActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("OPEND");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        tblQL.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Mã", "Họ và tên", "Tuổi", "Giới tính", "Email", "Lương"
+            }
+        ));
+        tblQL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblQLMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblQL);
+
+        btnshowcuoi.setText("|<");
+        btnshowcuoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnshowcuoiActionPerformed(evt);
+            }
+        });
+
+        btnGiam.setText("<<");
+        btnGiam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGiamActionPerformed(evt);
+            }
+        });
+
+        btncuoi.setText(">|");
+        btncuoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncuoiActionPerformed(evt);
+            }
+        });
+
+        btnTang.setText(">>");
+        btnTang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTangActionPerformed(evt);
+            }
+        });
+
+        txtsizedong.setText("...");
+
+        jLabel3.setText("/");
+
+        txtsize.setText("...");
+
+        jLabel6.setText("Giói tính");
+
+        buttonGroup1.add(rdbNam);
+        rdbNam.setText("Nam");
+
+        buttonGroup1.add(rdbNu);
+        rdbNu.setText("Nữ");
+        rdbNu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbNuActionPerformed(evt);
+            }
+        });
+
+        btnXoa.setText("DELETE");
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
+
+        lblMa.setText("MÃ");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel2.setText("Quản Lí Nhân Viên");
+
+        lblName.setText("HỌ VÀ TÊN");
+
+        lblTuoi.setText("TUỔI");
+
+        lblKN.setText("EMAIL");
+
+        btnNew.setIcon(new javax.swing.ImageIcon("D:\\LopthayLinh\\src\\assment\\iconset4\\Actions-document-edit-icon-16.png")); // NOI18N
+        btnNew.setText("NEW");
+        btnNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewActionPerformed(evt);
+            }
+        });
+
+        btnSave.setText("SAVE");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("LƯƠNG");
+
+        btnExit.setText("EXIT");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblMa)
+                            .addComponent(lblName)
+                            .addComponent(lblTuoi)
+                            .addComponent(lblKN)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel1))
+                        .addGap(31, 31, 31))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnshowcuoi)
+                        .addGap(16, 16, 16)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnGiam)
+                                .addGap(29, 29, 29)
+                                .addComponent(txtsizedong))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rdbNam)
+                                .addGap(41, 41, 41)
+                                .addComponent(rdbNu)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtsize)
+                                .addGap(56, 56, 56)
+                                .addComponent(btnTang)
+                                .addGap(39, 39, 39)
+                                .addComponent(btncuoi))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(184, 184, 184)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtMa, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                                .addComponent(txtName)
+                                .addComponent(txtTuoi, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                                .addComponent(TXTEmail)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnFind, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnNew, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(143, 143, 143))))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(177, 177, 177))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblMa)
+                            .addComponent(txtMa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblName)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSave))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTuoi)
+                    .addComponent(txtTuoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXoa))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnFind)
+                    .addComponent(TXTEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblKN))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(rdbNam)
+                    .addComponent(rdbNu)
+                    .addComponent(jButton8))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtLuong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExit))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnshowcuoi)
+                    .addComponent(btnGiam)
+                    .addComponent(txtsizedong)
+                    .addComponent(jLabel3)
+                    .addComponent(txtsize)
+                    .addComponent(btnTang)
+                    .addComponent(btncuoi))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7))
+        );
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void tblQLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblQLMouseClicked
+        index = tblQL.getSelectedRow();
+        showDetail();
+    }//GEN-LAST:event_tblQLMouseClicked
+
+    private void btnshowcuoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnshowcuoiActionPerformed
+        index = 0;
+        showDetail();
+        hienthimaudong();
+        txtsizedong.setText("1");
+    }//GEN-LAST:event_btnshowcuoiActionPerformed
+
+    private void btnGiamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiamActionPerformed
+        if (index <= 0 || index > (ListQl.size())) {
+            index = (ListQl.size() - 1);
+            showDetail();
+            hienthimaudong();
+            txtsizedong.setText((ListQl.size()) + "");
+            return;
+        }
+        if (index > 0 && index <= (ListQl.size())) {
+            index--;
+            showDetail();
+            hienthimaudong();
+            txtsizedong.setText((index + 1) + "");
+        }
+    }//GEN-LAST:event_btnGiamActionPerformed
+
+    private void btnTangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTangActionPerformed
+        if (index < 0 || index >= (ListQl.size() - 1)) {
+            index = 0;
+            showDetail();
+            hienthimaudong();
+            txtsizedong.setText("1");
+            return;
+        } else if (index < (ListQl.size())) {
+            index++;
+            showDetail();
+            hienthimaudong();
+            txtsizedong.setText((index + 1) + "");
+        }
+    }//GEN-LAST:event_btnTangActionPerformed
+
+    private void rdbNuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbNuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rdbNuActionPerformed
+
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        int IndexDelete = tblQL.getSelectedRow();
+        model.removeRow(tblQL.getSelectedRow());
+        ListQl.remove(IndexDelete);
+        txtsize.setText((ListQl.size() - 1) + "");
+    }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    OpenFile();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
+        txtMa.setText("");
+        txtName.setText("");
+        txtTuoi.setText("");
+        TXTEmail.setText("");
+        txtLuong.setText("");
+        txtMa.setBackground(Color.white);
+        txtName.setBackground(Color.white);
+        txtTuoi.setBackground(Color.white);
+        TXTEmail.setBackground(Color.white);
+        txtLuong.setBackground(Color.white);
+        index = -1;
+    }//GEN-LAST:event_btnNewActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        try {
+            if (index == -1) {
+                txtMa.setBackground(Color.white);
+                txtName.setBackground(Color.white);
+                txtTuoi.setBackground(Color.white);
+                TXTEmail.setBackground(Color.white);
+                txtLuong.setBackground(Color.white);
+                if (check() == true) {
+                ListQl.add(readFrom());
+                fillTable();
+                txtsize.setText(ListQl.size() + "");
+//                JOptionPane.showMessageDialog(this, "Bạn nhập thành công");
+                index = -2;  
+                }
+            } else {
+                txtMa.setBackground(Color.white);
+                txtName.setBackground(Color.white);
+                txtTuoi.setBackground(Color.white);
+                TXTEmail.setBackground(Color.white);
+                txtLuong.setBackground(Color.white);
+                if (check() == true){ 
+                Save();
+                fillTable();
+                }
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btncuoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncuoiActionPerformed
+        index = (ListQl.size() - 1);
+        showDetail();
+        hienthimaudong();
+        txtsizedong.setText(ListQl.size() + "");
+    }//GEN-LAST:event_btncuoiActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+      writeFile();
+    }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
+        Find();
+    }//GEN-LAST:event_btnFindActionPerformed
+    ArrayList<QLNV> ListQl = new ArrayList<>();
+
+    void loadData() {
+        ListQl.add(new QLNV("ph17290", "Huy", 19, "Nam", "huyph17290", 100000));
+        ListQl.add(new QLNV("ph17251", "Huy", 19, "Nam", "huyph1751", 100000));
+        ListQl.add(new QLNV("ph18291", "Huương", 19, "Nữ", "huyph18291", 100000));
+        ListQl.add(new QLNV("ph17291", "Huy", 19, "Nam", "huyph17290", 100000));
+
+    }
+
+    public static void main(String args[]) {
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FROMNV().setVisible(true);
+            }
+        });
+    }
+
+    public void hienthimaudong() {
+        DefaultTableModel model = (DefaultTableModel) tblQL.getModel();
+        tblQL.setSelectionBackground(Color.blue);
+        tblQL.getSelectionModel().setSelectionInterval(index, index);
+    }
+
+    public void showDetail() {
+        QLNV ql = ListQl.get(index);
+        txtMa.setText(ql.getCodeNumber());
+        txtName.setText(ql.getName());
+        txtTuoi.setText(ql.getAge() + "");
+        TXTEmail.setText(ql.getEmail());
+        txtLuong.setText(ql.getSalary() + "");
+        if (ql.getGender().equalsIgnoreCase("Nam")) {
+            rdbNam.setSelected(true);
+        } else {
+            rdbNu.setSelected(true);
+        }
+
+    }
+
+    public boolean check() {
+        String Name = txtName.getText();
+        String CodeNumber = txtMa.getText();
+        int age = 0;
+        String Gender = rdbNam.isSelected() ? "Nam" : "Nữ";
+        String Email = TXTEmail.getText();
+         String mauEmail = "\\w+@\\w+(\\.\\w+){1,2}";
+        double Salary = 0;
+        boolean a = true;
+        int count =0;
+        if (CodeNumber.length() == 0) {
+            txtMa.setBackground(Color.red);
+            JOptionPane.showMessageDialog(this, "Mời bạn nhập mã nhân viên");
+            a = false;
+        }
+        for (QLNV x : ListQl) {
+            if (x.getCodeNumber().equals(txtMa.getText())) {
+                 txtMa.setBackground(Color.red);
+                 JOptionPane.showMessageDialog(this, "Mã nhân viên dã tồn tại");
+                 a = false;
+            }
+            count ++;
+        }
+        if (Name.length() == 0) {
+            txtName.setBackground(Color.red);
+            txtName.requestFocus();
+            JOptionPane.showMessageDialog(this, "Mời bạn nhập tên");
+            a = false;
+        }
+        if (txtTuoi.getText().length() == 0) {
+            txtTuoi.setBackground(Color.red);
+            txtTuoi.requestFocus();
+            JOptionPane.showMessageDialog(this, "Mời bạn nhập tuổi");
+              a = false;
+        }else if (Integer.parseInt(txtTuoi.getText()) <16 || Integer.parseInt(txtTuoi.getText()) > 55) {
+            JOptionPane.showMessageDialog(this, "Tuổi phải nằm trong khoảng từ 16 đến 55");
+            txtTuoi.requestFocus();
+            txtTuoi.setBackground(Color.red);
+            a = false;
+        }
+         try {    
+            int Tuoi = Integer.parseInt(txtTuoi.getText());
+            age = Integer.parseInt(txtTuoi.getText());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Lỗi");
+            txtTuoi.requestFocus();
+            txtTuoi.setBackground(Color.red);
+        }
+        
+        if (Email.length() == 0) {
+            TXTEmail.setBackground(Color.red);
+            JOptionPane.showMessageDialog(this, "Mời bạn nhập Email");
+              a = false;
+
+        }
+        else if (!Email.matches(mauEmail)) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập email đúng định dạng");
+            TXTEmail.requestFocus();
+              a = false;
+        }
+        for (QLNV x : ListQl) {
+            if (x.getEmail().equals(TXTEmail.getText())) {
+                 TXTEmail.setBackground(Color.red);
+                 JOptionPane.showMessageDialog(this, "Email đã tồn tại");
+                 a = false;
+            }
+            count ++;
+        }
+        if (!(rdbNam.isSelected() || rdbNu.isSelected())) {
+            JOptionPane.showMessageDialog(rootPane, "Mời chọn giới tính");
+              a = false;
+        }
+
+        if (txtLuong.getText().length() == 0) {
+            txtLuong.setBackground(Color.red);
+            txtLuong.requestFocus();
+            JOptionPane.showMessageDialog(this, "Mời bạn nhập Lương");
+              a = false;
+
+        }else if (Double.parseDouble(txtLuong.getText()) < 5000000) {
+           txtLuong.requestFocus();
+           txtLuong.setBackground(Color.red); 
+           JOptionPane.showMessageDialog(this, "Lương ko đúng định dạng");
+             a = false;
+        }
+        try {
+            double luong = Double.parseDouble(txtLuong.getText());
+            Salary = Double.parseDouble(txtLuong.getText());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Lỗi");
+            txtLuong.requestFocus();
+            txtLuong.setBackground(Color.red);
+        }
+        
+        return a;
+    }
+
+    QLNV readFrom() {
+        String Name = txtName.getText();
+        String CodeNumber = txtMa.getText();
+        int age = Integer.parseInt(txtTuoi.getText());
+        String Gender = rdbNam.isSelected() ? "Nam" : "Nữ";
+        String Email = TXTEmail.getText();
+        double Salary = Double.parseDouble(txtLuong.getText());
+        return new QLNV(CodeNumber, Name, age, Gender, Email, Salary);
+    }
+
+    void fillTable() {
+        DefaultTableModel mol = (DefaultTableModel) tblQL.getModel();
+        mol.setRowCount(0);
+        for (QLNV x : ListQl) {
+            mol.addRow(new Object[]{x.getCodeNumber(), x.getName(), x.getAge(), x.getGender(), x.getEmail(), x.getSalary()});
+        }
+    }
+
+    void SaveFile() {
+
+    }
+
+    void Save() {
+        int Index = tblQL.getSelectedRow();
+        QLNV qlnv = ListQl.get(Index);
+        qlnv.setCodeNumber(txtMa.getText());
+        qlnv.setName(txtName.getText());
+        qlnv.setAge(Integer.parseInt(txtTuoi.getText()));
+        qlnv.setEmail(TXTEmail.getText());
+        qlnv.setGender(rdbNam.isSelected() ? "Nam" : "Nữ");
+        qlnv.setSalary(Double.parseDouble(txtLuong.getText()));
+    }
+
+    void Find() {
+        String NameFind = JOptionPane.showInputDialog(null, "mời bạn nhập mã muốn tìm");
+        int i;
+        for (i = 0; i < ListQl.size(); i++){
+            if (ListQl.get(i).getCodeNumber().equalsIgnoreCase(NameFind)) {
+                index = i;
+                showDetail();
+                break;
+            }
+        }
+        if (i == ListQl.size()) {
+            JOptionPane.showMessageDialog(this, "Không tìm thấy");
+        }
+    }
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TXTEmail;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnFind;
+    private javax.swing.JButton btnGiam;
+    private javax.swing.JButton btnNew;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnTang;
+    private javax.swing.JButton btnXoa;
+    private javax.swing.JButton btncuoi;
+    private javax.swing.JButton btnshowcuoi;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblKN;
+    private javax.swing.JLabel lblMa;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblTuoi;
+    private javax.swing.JRadioButton rdbNam;
+    private javax.swing.JRadioButton rdbNu;
+    private javax.swing.JTable tblQL;
+    private javax.swing.JTextField txtLuong;
+    private javax.swing.JTextField txtMa;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtTuoi;
+    private javax.swing.JLabel txtsize;
+    private javax.swing.JLabel txtsizedong;
+    // End of variables declaration//GEN-END:variables
+void OpenFile() {
+        JFileChooser F = new JFileChooser();
+        int result = F.showOpenDialog(this);
+        if (result== JFileChooser.APPROVE_OPTION) {
+            try {
+                File file = F.getSelectedFile();
+                FileInputStream FIP = new FileInputStream(file);
+                ObjectInputStream osi = new ObjectInputStream(FIP);
+                ListQl = (ArrayList<QLNV>) osi.readObject();
+                FIP.close();
+                osi.close();
+                fillTable();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }
+    
+    }
+//
+//    void saveSFiledat() {
+//        try {
+//            FileWriter fl = new FileWriter("D:/luumoi/txt.dat", true);
+//            BufferedWriter bw = new BufferedWriter(fl);
+//            for (QLNV Q : ListQl) {
+//                bw.write(Q.toString());
+//                bw.newLine();
+//
+//            }
+//            bw.close();
+//            fl.close();
+//
+//        } catch (Exception e) {
+//        }
+//    }
+
+//    void saveSFile() {
+//        try {
+//            FileWriter fl = new FileWriter("D:/luumoi/txt.txt", true);
+//            BufferedWriter bw = new BufferedWriter(fl);
+//            for (QLNV Q : ListQl) {
+//                bw.write(Q.toString());
+//                bw.newLine();
+//            }
+//            bw.close();
+//            fl.close();
+//
+//        } catch (Exception e) {
+//        }
+//    }
+
+    void saveFiletxt() {
+        try {
+            FileWriter fl = new FileWriter("D:/luumoi/txt.txt");
+            BufferedWriter bw = new BufferedWriter(fl);
+            for (QLNV Q : ListQl) {
+                bw.write(Q.toString());
+                bw.newLine();
+            }
+            bw.close();
+            fl.close();
+        } catch (Exception e) {
+        }
+    }
+
+    void writeFile() {
+        JFileChooser F = new JFileChooser();
+        int result = F.showSaveDialog(this);
+        if (result== JFileChooser.APPROVE_OPTION) {
+        try {
+            File fi = F.getSelectedFile();
+            FileOutputStream fo = new FileOutputStream(fi);
+            ObjectOutputStream ofo = new ObjectOutputStream(fo);
+            ofo.writeObject(ListQl);
+            ofo.close();
+        } catch (Exception e) {
+        }
+        }
+
+    }
+
+
+      
+    
+    void Exit(){
+        int c = JOptionPane.showConfirmDialog(this, "Bạn có muốn thoát ko?");
+            if (c == JOptionPane.YES_OPTION) {
+                System.exit(0);
+    }
+    }   
+
+}

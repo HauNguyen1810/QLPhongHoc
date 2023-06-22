@@ -1,0 +1,34 @@
+package Entitys;
+
+public class Rooms {
+	private String UserName;
+	private String PassWord;
+	
+	
+	
+	public Rooms() {
+		super();
+	}
+	public Rooms(String userName, String passWord) {
+		super();
+		UserName = userName;
+		PassWord = passWord;
+	}
+	public String getUserName() {
+		return UserName;
+	}
+	public void setUserName(String userName) {
+		UserName = userName;
+	}
+	public String getPassWord() {
+		return PassWord;
+	}
+	public void setPassWord(String passWord) {
+		PassWord = passWord;
+	}
+	@Override
+	public String toString() {
+		return "Rooms [UserName=" + UserName + ", PassWord=" + PassWord + "]";
+	}
+	
+}

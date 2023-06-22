@@ -1,0 +1,6 @@
+package Entity;
+
+public class Rooms {
+	private String UserName;
+	private String PassWord;
+}

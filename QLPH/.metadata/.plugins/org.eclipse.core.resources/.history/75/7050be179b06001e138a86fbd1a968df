@@ -1,0 +1,8 @@
+package Entitys;
+
+public class Rooms {
+	private int AreaId;
+	private int RowOfHousesId;
+	private String RoomName;
+	
+}

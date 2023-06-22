@@ -1,0 +1,11 @@
+package Entitys;
+
+import java.io.Serializable;
+
+public class Rooms implements Serializable{
+	private int AreaId;
+	private int RowOfHousesId;
+	private String RoomName;
+	private String date;
+	
+}

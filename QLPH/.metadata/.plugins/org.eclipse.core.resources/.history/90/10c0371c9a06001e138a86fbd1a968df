@@ -1,0 +1,6 @@
+package Entitys;
+
+public class ClassNames {
+	private int id;
+	private String ClassName;
+}

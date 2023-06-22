@@ -1,0 +1,7 @@
+package Entitys;
+
+public class Rooms {
+	private String Area;
+	private String RowOfHouses;
+	private String RoomName;
+}

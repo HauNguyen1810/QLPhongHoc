@@ -1,0 +1,14 @@
+package Entitys;
+
+public class SubjectNames {
+	private int id;
+	private String SubjectName;
+	public SubjectNames(int id, String subjectName) {
+		super();
+		this.id = id;
+		SubjectName = subjectName;
+	}
+	
+	
+	
+}
